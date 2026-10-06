@@ -83,15 +83,25 @@
             background: #333333;
             border-radius: 4px;
         }
+
+        /* Logo Placeholder Style */
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative">
 
     <!-- Top Navigation Bar -->
     <header class="h-16 border-b border-gray-800/80 px-4 md:px-8 flex items-center justify-between bg-zenaja-black/90 backdrop-blur-md z-30 shrink-0">
-        <!-- Logo Zenaja -->
+        <!-- Logo Zenaja + Logo Image -->
         <div class="flex items-center space-x-3">
-            <div class="flex items-center justify-center bg-zenaja-lime text-black font-black px-3 py-1 rounded-lg text-lg tracking-wider">
+            <!-- Logo Image di samping kiri atas -->
+            <img src="logo-zenaja.png" alt="Zenaja Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- Fallback Text Logo jika gambar tidak ditemukan -->
+            <div class="hidden items-center justify-center bg-zenaja-lime text-black font-black px-3 py-1 rounded-lg text-lg tracking-wider">
                 ZENAJA
             </div>
             <span class="text-xs md:text-sm font-semibold tracking-wider text-gray-400 uppercase hidden sm:inline-block border-l border-gray-800 pl-3">
@@ -103,7 +113,7 @@
         <div class="flex items-center space-x-2 md:space-x-4">
             <!-- Slide Counter -->
             <div class="text-xs md:text-sm font-bold px-3 py-1.5 rounded-full bg-zenaja-dark text-gray-300 border border-gray-800">
-                <span id="current-slide-num" class="text-zenaja-lime">1</span> / <span id="total-slides-num">6</span>
+                <span id="current-slide-num" class="text-zenaja-lime">1</span> / <span id="total-slides-num">7</span>
             </div>
 
             <!-- Overview Modal Button -->
@@ -150,7 +160,7 @@
 
                 <div class="lg:col-span-5 h-full flex items-center justify-center relative">
                     <div class="w-full h-64 lg:h-full max-h-[420px] rounded-2xl overflow-hidden relative border-2 border-gray-800 shadow-2xl group">
-                        <img src="Billboard_Horizontal.png" alt="Zenaja Banner" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition duration-500">
+                        <img src="Billboard_Horizontal.jpg" alt="Zenaja Banner" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                             <p class="text-xs font-bold tracking-widest text-zenaja-lime uppercase">FLEXIBLE, EFFORTLESS, & DESIGNED FOR YOU</p>
                         </div>
@@ -275,8 +285,8 @@
                     Mulai dari Tennis, Badminton, Gym, Futsal, hingga Wellness Studio dapat di-booking dalam hitungan detik.
                 </div>
                 <div class="flex justify-end gap-2">
-                    <img src="Billboard_Vertical1.png" alt="Zenaja Sport" class="h-16 rounded-lg object-cover">
-                    <img src="Billboard_Vertical2.png" alt="Zenaja Mood" class="h-16 rounded-lg object-cover">
+                    <img src="Billboard_Vertical1.jpg" alt="Zenaja Sport" class="h-16 rounded-lg object-cover">
+                    <img src="Billboard_Vertical2.jpg" alt="Zenaja Mood" class="h-16 rounded-lg object-cover">
                 </div>
             </div>
         </section>
@@ -336,7 +346,7 @@
                 <!-- Visual Mockup Image -->
                 <div class="lg:col-span-5 h-full flex items-center justify-center">
                     <div class="rounded-2xl border-2 border-zenaja-lime/30 overflow-hidden shadow-2xl relative max-h-[360px]">
-                        <img src="Billboard_Vertical_Mockup.png" alt="Zenaja Mockup Billboard" class="w-full h-full object-cover">
+                        <img src="Billboard_Vertical_Mockup.jpg" alt="Zenaja Mockup Billboard" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 inset-x-0 bg-black/80 backdrop-blur-md p-3 text-center border-t border-gray-800">
                             <p class="text-xs font-bold text-white uppercase">Choose Experiences That Fit Your Lifestyle</p>
                         </div>
@@ -398,30 +408,146 @@
             </div>
         </section>
 
-        <!-- SLIDE 6: Call To Action (Sales Closing) -->
-        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-gradient-to-b from-zenaja-dark to-black border border-gray-800 relative overflow-hidden" data-title="Gabung Sekarang">
+        <!-- SLIDE 6: APPS SHOWCASE (NEW) -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-zenaja-dark border border-gray-800/80 relative overflow-hidden" data-title="Aplikasi Zenaja">
+            <div class="mb-2">
+                <span class="text-xs font-bold text-zenaja-lime uppercase tracking-widest">Mobile Experience</span>
+                <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1">Aplikasi Zenaja di Tangan Anda</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto">
+                <!-- Left: Features & Store Links -->
+                <div class="lg:col-span-5 space-y-6">
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Dirancang khusus untuk memudahkan pelanggan menemukan dan membooking venue olahraga favorit mereka. Tersedia di iOS dan Android.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-zenaja-lime/10 text-zenaja-lime flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Pencarian Cerdas</h4>
+                                <p class="text-xs text-gray-400">Temukan venue berdasarkan lokasi, jenis olahraga, dan harga.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-zenaja-pink/10 text-zenaja-pink flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-credit-card text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Pembayaran Instan</h4>
+                                <p class="text-xs text-gray-400">Bayar dengan berbagai metode: E-Wallet, Transfer, QRIS.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-zenaja-lime/10 text-zenaja-lime flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-clock text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Real-Time Availability</h4>
+                                <p class="text-xs text-gray-400">Lihat jadwal kosong secara langsung tanpa perlu tanya manual.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Store Buttons -->
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#" class="flex items-center gap-3 bg-black border border-gray-700 hover:border-zenaja-lime rounded-xl px-5 py-3 transition group">
+                            <i class="fa-brands fa-google-play text-2xl text-zenaja-lime group-hover:scale-110 transition"></i>
+                            <div class="text-left">
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Get it on</p>
+                                <p class="text-sm font-bold text-white">Google Play</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 bg-black border border-gray-700 hover:border-zenaja-lime rounded-xl px-5 py-3 transition group">
+                            <i class="fa-brands fa-apple text-2xl text-zenaja-lime group-hover:scale-110 transition"></i>
+                            <div class="text-left">
+                                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Download on the</p>
+                                <p class="text-sm font-bold text-white">App Store</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Phone Mockup -->
+                <div class="lg:col-span-7 h-full flex items-center justify-center relative">
+                    <div class="relative w-64 h-96 bg-black rounded-[2.5rem] border-8 border-gray-800 shadow-2xl overflow-hidden glow-lime">
+                        <!-- Notch -->
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+                        <!-- Screen Content -->
+                        <div class="w-full h-full bg-gradient-to-b from-gray-900 to-black flex flex-col items-center justify-center p-4 relative">
+                            <img src="Billboard_Vertical1.jpg" alt="App Screen" class="absolute inset-0 w-full h-full object-cover opacity-40">
+                            <div class="relative z-10 text-center space-y-4">
+                                <div class="w-16 h-16 bg-zenaja-lime rounded-2xl mx-auto flex items-center justify-center text-black text-2xl font-black">
+                                    Z
+                                </div>
+                                <h3 class="text-white font-black text-xl">ZENAJA</h3>
+                                <p class="text-gray-300 text-xs">Book Your Sport Venue</p>
+                                <div class="bg-zenaja-lime text-black text-xs font-bold px-4 py-2 rounded-full">
+                                    Coming Soon
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-zenaja-pink/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: CONTACT US (NEW) -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-gradient-to-b from-zenaja-dark to-black border border-gray-800 relative overflow-hidden" data-title="Hubungi Kami">
             <div class="absolute -top-32 -right-32 w-80 h-80 bg-zenaja-lime/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-zenaja-pink/10 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div class="text-center max-w-2xl mx-auto space-y-3 my-auto z-10">
+            <div class="text-center max-w-3xl mx-auto space-y-6 my-auto z-10 w-full">
                 <span class="px-3 py-1 rounded-full bg-zenaja-lime/20 text-zenaja-lime text-xs font-bold uppercase tracking-widest border border-zenaja-lime/30">
-                    Mari Tumbuh Bersama
+                    Hubungi Kami
                 </span>
                 <h2 class="text-3xl sm:text-5xl font-black uppercase text-white leading-tight">
-                    Gabung Sebagai <span class="text-zenaja-lime">Mitra Rekanan</span> Zenaja Sekarang!
+                    Siap <span class="text-zenaja-lime">Berkolaborasi</span> dengan Zenaja?
                 </h2>
-                <p class="text-gray-300 text-sm md:text-base">
-                    Optimalkan slot lapangan Anda, raih insentif cashback bulanan, dan jangkau ribuan pehobi olahraga di sekitar venue Anda.
+                <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto">
+                    Tim kami siap membantu Anda mendaftarkan venue dan menjawab semua pertanyaan seputar program kemitraan.
                 </p>
 
-                <!-- Contact & Action Card -->
-                <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
-                    <a href="https://wa.me/?text=Halo%20Tim%20Zenaja,%20saya%20tertarik%20mendaftarkan%20venue%20olahraga%20kami." target="_blank" class="flex items-center justify-center gap-2 px-6 py-3.5 bg-zenaja-lime text-black font-extrabold rounded-2xl hover:bg-opacity-90 transition shadow-lg shadow-zenaja-lime/20 text-sm">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Sales Kami
+                <!-- Contact Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/6281234567890?text=Halo%20Tim%20Zenaja,%20saya%20tertarik%20mendaftarkan%20venue%20olahraga%20kami." target="_blank" class="bg-zenaja-card p-5 rounded-2xl border border-gray-800 hover:border-zenaja-lime transition group text-center space-y-2">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-zenaja-lime/10 text-zenaja-lime flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">WhatsApp Sales</h4>
+                        <p class="text-xs text-gray-400">+62 812-3456-7890</p>
                     </a>
-                    <div class="flex items-center justify-center gap-2 px-6 py-3.5 bg-zenaja-card text-white font-extrabold rounded-2xl border border-gray-700 text-sm">
-                        <i class="fa-solid fa-globe text-zenaja-lime"></i> ZENAJA.ID
+
+                    <!-- Email -->
+                    <a href="mailto:partnership@zenaja.id" class="bg-zenaja-card p-5 rounded-2xl border border-gray-800 hover:border-zenaja-lime transition group text-center space-y-2">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-zenaja-pink/10 text-zenaja-pink flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Email Partnership</h4>
+                        <p class="text-xs text-gray-400">partnership@zenaja.id</p>
+                    </a>
+
+                    <!-- Office -->
+                    <div class="bg-zenaja-card p-5 rounded-2xl border border-gray-800 text-center space-y-2">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gray-800 text-gray-300 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Kantor Pusat</h4>
+                        <p class="text-xs text-gray-400">Jakarta, Indonesia</p>
                     </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="pt-6">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Tim%20Zenaja,%20saya%20tertarik%20mendaftarkan%20venue%20olahraga%20kami." target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-zenaja-lime text-black font-extrabold rounded-2xl hover:bg-opacity-90 transition shadow-lg shadow-zenaja-lime/20 text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Mulai Diskusi Sekarang
+                    </a>
                 </div>
             </div>
 
@@ -443,7 +569,7 @@
     <footer class="bg-zenaja-black border-t border-gray-800/80 px-4 md:px-8 py-3 z-30 shrink-0">
         <!-- Progress Bar -->
         <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden mb-3">
-            <div id="progress-bar" class="bg-gradient-to-r from-zenaja-lime to-zenaja-pink h-full w-1/6 transition-all duration-300"></div>
+            <div id="progress-bar" class="bg-gradient-to-r from-zenaja-lime to-zenaja-pink h-full w-1/7 transition-all duration-300"></div>
         </div>
 
         <div class="flex items-center justify-between">
