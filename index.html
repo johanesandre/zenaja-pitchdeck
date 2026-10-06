@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenaja - Partnership Pitch Deck</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        zenaja: {
+                            lime: '#D2FF00',      /* Vibrant Lime Yellow */
+                            pink: '#FF007F',      /* Vibrant Hot Pink */
+                            black: '#111111',     /* Deep Black */
+                            dark: '#1A1A1A',      /* Dark Gray */
+                            card: '#222222',      /* Surface Dark */
+                            ice: '#E2ECE9',       /* Light Ice Tone */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0E0E0E;
+            color: #FFFFFF;
+            user-select: none;
+            overflow: hidden;
+        }
+
+        /* Slide Transition System */
+        .slide {
+            display: none;
+            opacity: 0;
+            transform: scale(0.97) translateY(12px);
+            transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+            height: 100%;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Custom Styling for Zenaja Branding */
+        .text-lime { color: #D2FF00; }
+        .bg-lime { background-color: #D2FF00; }
+        .border-lime { border-color: #D2FF00; }
+
+        .text-pink { color: #FF007F; }
+        .bg-pink { background-color: #FF007F; }
+        
+        .glow-lime {
+            box-shadow: 0 0 30px rgba(210, 255, 0, 0.25);
+        }
+
+        .glow-pink {
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative">
+
+    <!-- Top Navigation Bar -->
+    <header class="h-16 border-b border-gray-800/80 px-4 md:px-8 flex items-center justify-between bg-zenaja-black/90 backdrop-blur-md z-30 shrink-0">
+        <!-- Logo Zenaja -->
+        <div class="flex items-center space-x-3">
+            <div class="flex items-center justify-center bg-zenaja-lime text-black font-black px-3 py-1 rounded-lg text-lg tracking-wider">
+                ZENAJA
+            </div>
+            <span class="text-xs md:text-sm font-semibold tracking-wider text-gray-400 uppercase hidden sm:inline-block border-l border-gray-800 pl-3">
+                Partnership Program
+            </span>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center space-x-2 md:space-x-4">
+            <!-- Slide Counter -->
+            <div class="text-xs md:text-sm font-bold px-3 py-1.5 rounded-full bg-zenaja-dark text-gray-300 border border-gray-800">
+                <span id="current-slide-num" class="text-zenaja-lime">1</span> / <span id="total-slides-num">6</span>
+            </div>
+
+            <!-- Overview Modal Button -->
+            <button onclick="toggleOverview()" title="Lihat Semua Slide (O)" class="p-2 rounded-lg bg-zenaja-dark hover:bg-gray-800 text-gray-300 hover:text-white transition">
+                <i class="fa-solid fa-border-all"></i>
+            </button>
+
+            <!-- Fullscreen Button -->
+            <button onclick="toggleFullscreen()" title="Layar Penuh (F)" class="px-3 py-1.5 rounded-lg bg-zenaja-lime text-black font-bold text-xs uppercase hover:bg-opacity-90 transition flex items-center gap-1.5 shadow-lg shadow-zenaja-lime/10">
+                <i class="fa-solid fa-expand text-sm"></i>
+                <span class="hidden md:inline">Full Screen</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Presentation Container -->
+    <main class="relative flex-1 w-full max-w-7xl mx-auto p-3 sm:p-6 md:p-8 flex items-center justify-center overflow-hidden">
+
+        <!-- SLIDE 1: Cover / Intro -->
+        <section class="slide active w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-zenaja-dark border border-gray-800/80 relative overflow-hidden" data-title="Sampul Depan">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full items-center">
+                <div class="lg:col-span-7 flex flex-col justify-center space-y-6 z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zenaja-lime/10 border border-zenaja-lime/30 text-zenaja-lime text-xs font-bold uppercase tracking-wider w-fit">
+                        <i class="fa-solid fa-bolt"></i> Mitra Resmi Venue Olahraga
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-none text-white">
+                        Digital Partner Untuk <span class="text-zenaja-lime">Growth Venue</span> Anda
+                    </h1>
+                    <p class="text-gray-300 text-base md:text-lg max-w-xl font-normal leading-relaxed">
+                        Hubungkan venue Anda dengan ribuan pengguna aktif iOS & Android. Tingkatkan keterisian jam operasional dan pendapatan operasional secara otomatis.
+                    </p>
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
+                        <span class="bg-gray-800/80 text-gray-300 text-xs font-semibold px-3 py-1.5 rounded-md border border-gray-700 flex items-center gap-2">
+                            <i class="fa-brands fa-google-play text-zenaja-lime"></i> Google Play
+                        </span>
+                        <span class="bg-gray-800/80 text-gray-300 text-xs font-semibold px-3 py-1.5 rounded-md border border-gray-700 flex items-center gap-2">
+                            <i class="fa-brands fa-apple text-zenaja-lime"></i> App Store
+                        </span>
+                        <span class="bg-zenaja-pink/20 text-zenaja-pink text-xs font-bold px-3 py-1.5 rounded-md border border-zenaja-pink/30 flex items-center gap-2">
+                            <i class="fa-solid fa-tag"></i> 0% Charge Fee
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 h-full flex items-center justify-center relative">
+                    <div class="w-full h-64 lg:h-full max-h-[420px] rounded-2xl overflow-hidden relative border-2 border-gray-800 shadow-2xl group">
+                        <img src="Billboard_Horizontal.jpg" alt="Zenaja Banner" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                            <p class="text-xs font-bold tracking-widest text-zenaja-lime uppercase">FLEXIBLE, EFFORTLESS, & DESIGNED FOR YOU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Problem & Solusi Vendor -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-zenaja-dark border border-gray-800/80 relative" data-title="Tantangan & Solusi">
+            <div class="mb-4">
+                <span class="text-xs font-bold text-zenaja-pink uppercase tracking-widest">Tantangan Bisnis Venue</span>
+                <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1">Mengapa Bergabung dengan Zenaja?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+                <!-- Masalah Vendor -->
+                <div class="bg-zenaja-black/80 p-6 rounded-2xl border border-red-500/20 space-y-4">
+                    <div class="flex items-center gap-3 text-red-400">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                        <h3 class="font-bold text-lg text-white">Kendala Vendor Saat Ini</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span><b>Jam Non-Peak Kosong:</b> Banyak slot waktu olahraga yang sepi dan tidak terisi di jam kerja.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span><b>Pemesanan Manual Repot:</b> Melayani pesan WhatsApp satu per satu memakan waktu & rentan bentrok jadwal.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span><b>Jangkauan Promosi Terbatas:</b> Promosi sendiri membutuhkan biaya iklan mahal tanpa jaminan konversi.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solusi Zenaja -->
+                <div class="bg-zenaja-black/80 p-6 rounded-2xl border border-zenaja-lime/30 space-y-4 glow-lime">
+                    <div class="flex items-center gap-3 text-zenaja-lime">
+                        <i class="fa-solid fa-circle-check text-xl"></i>
+                        <h3 class="font-bold text-lg text-white">Solusi Dari Zenaja</h3>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-zenaja-lime mt-1"></i>
+                            <span><b>Automated Booking:</b> Pelanggan memilih, membooking, dan membayar sendiri secara mandiri 24/7.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-zenaja-lime mt-1"></i>
+                            <span><b>Paparan Pengguna Luas:</b> Venue Anda dilihat langsung oleh pengguna di area terdekat.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-zenaja-lime mt-1"></i>
+                            <span><b>Fleksibilitas Tinggi:</b> Bebas atur jadwal operasional dan jenis olahraga sesuai ketersediaan Anda.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-900/90 p-4 rounded-xl border border-gray-800 text-center text-xs sm:text-sm text-gray-300">
+                🚀 <span class="text-white font-bold">Zenaja hadir sebagai jembatan digital:</span> Memudahkan pelanggan menemukan venue Anda dengan mudah & fleksibel.
+            </div>
+        </section>
+
+        <!-- SLIDE 3: How Zenaja Works -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-zenaja-dark border border-gray-800/80" data-title="Cara Kerja Platform">
+            <div class="mb-4">
+                <span class="text-xs font-bold text-zenaja-lime uppercase tracking-widest">Simple Workflow</span>
+                <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1">Cara Kerja Aplikasi Bagi Pelanggan</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto">
+                <!-- Step 1 -->
+                <div class="bg-zenaja-card p-6 rounded-2xl border border-gray-800 relative space-y-3 group hover:border-zenaja-lime transition">
+                    <div class="w-10 h-10 rounded-xl bg-zenaja-lime text-black font-black flex items-center justify-center text-lg">
+                        1
+                    </div>
+                    <h3 class="font-extrabold text-lg text-white">Cari & Pilih Venue</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Pengguna membuka aplikasi Zenaja, memilih jenis olahraga favorit, dan memilih lokasi terdekat dari area mereka.
+                    </p>
+                    <div class="pt-2 text-zenaja-lime text-xs font-bold flex items-center gap-1">
+                        <span>Akses Mudah via Mobile</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-zenaja-card p-6 rounded-2xl border border-gray-800 relative space-y-3 group hover:border-zenaja-pink transition">
+                    <div class="w-10 h-10 rounded-xl bg-zenaja-pink text-white font-black flex items-center justify-center text-lg">
+                        2
+                    </div>
+                    <h3 class="font-extrabold text-lg text-white">Bayar Mandiri Online</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Pengguna memilih jadwal jam yang tersedia dan melakukan pembayaran aman langsung di aplikasi (iOS/Android).
+                    </p>
+                    <div class="pt-2 text-zenaja-pink text-xs font-bold flex items-center gap-1">
+                        <span>Pembayaran 100% Instant</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-zenaja-card p-6 rounded-2xl border border-gray-800 relative space-y-3 group hover:border-zenaja-lime transition">
+                    <div class="w-10 h-10 rounded-xl bg-zenaja-lime text-black font-black flex items-center justify-center text-lg">
+                        3
+                    </div>
+                    <h3 class="font-extrabold text-lg text-white">Datang & Olahraga</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Pelanggan tinggal menunjukkan bukti booking di venue Anda dan langsung menikmati fasilitas olahraga.
+                    </p>
+                    <div class="pt-2 text-zenaja-lime text-xs font-bold flex items-center gap-1">
+                        <span>Tanpa Antre / Ribet</span> <i class="fa-solid fa-check text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner Highlight Footer -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black/50 p-4 rounded-2xl border border-gray-800 items-center">
+                <div class="text-xs text-gray-300">
+                    <strong class="text-white uppercase tracking-wider block mb-0.5">Satu Aplikasi, Berbagai Olahraga</strong>
+                    Mulai dari Tennis, Badminton, Gym, Futsal, hingga Wellness Studio dapat di-booking dalam hitungan detik.
+                </div>
+                <div class="flex justify-end gap-2">
+                    <img src="Billboard_Vertical1.jpg" alt="Zenaja Sport" class="h-16 rounded-lg object-cover">
+                    <img src="Billboard_Vertical2.jpg" alt="Zenaja Mood" class="h-16 rounded-lg object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Benefit & Special Offer (Highlight Vendor) -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-zenaja-dark border border-gray-800/80 relative overflow-hidden" data-title="Benefit & Cashback">
+            <div class="mb-2">
+                <span class="text-xs font-bold text-zenaja-lime uppercase tracking-widest">Penawaran Eksklusif Rekanan</span>
+                <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1">Keuntungan Bergabung Jadi Rekanan</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center my-auto">
+                <!-- Benefit Highlight Cards -->
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Card 1: Special Cashback -->
+                    <div class="p-5 rounded-2xl bg-gradient-to-r from-zenaja-pink/20 to-purple-900/20 border-2 border-zenaja-pink/50 relative overflow-hidden glow-pink">
+                        <div class="absolute -right-4 -bottom-4 opacity-20 text-zenaja-pink text-8xl font-black">
+                            %
+                        </div>
+                        <div class="relative z-10 space-y-1">
+                            <span class="bg-zenaja-pink text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">SPECIAL PROMO VENDOR</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-white">
+                                Cashback Hingga <span class="text-zenaja-lime">Rp 1.000.000</span> / Bulan!
+                            </h3>
+                            <p class="text-xs text-gray-200">
+                                Dapatkan insentif tambahan tiap bulan dari Zenaja untuk meningkatkan keaktifan venue Anda.
+                            </p>
+                            <p class="text-[11px] text-zenaja-lime font-bold pt-1">
+                                *Syarat & Ketentuan: Minimal 30 transaksi per hari di venue Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: 0% Charge Fee -->
+                    <div class="p-4 rounded-xl bg-zenaja-card border border-gray-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-zenaja-lime/10 text-zenaja-lime flex items-center justify-center text-xl shrink-0 font-bold">
+                            0%
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-sm">Gratis Biaya Layanan (Tanpa Charge)</h4>
+                            <p class="text-xs text-gray-400">Vendor tidak dikenakan potongan charge pendaftaran atau komisi tersembunyi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Free Awareness -->
+                    <div class="p-4 rounded-xl bg-zenaja-card border border-gray-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-zenaja-pink/10 text-zenaja-pink flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-sm">Promosi & Brand Awareness Gratis</h4>
+                            <p class="text-xs text-gray-400">Venue Anda dipromosikan langsung di banner aplikasi, media sosial, dan campaign Zenaja.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Mockup Image -->
+                <div class="lg:col-span-5 h-full flex items-center justify-center">
+                    <div class="rounded-2xl border-2 border-zenaja-lime/30 overflow-hidden shadow-2xl relative max-h-[360px]">
+                        <img src="Billboard_Vertical_Mockup.jpg" alt="Zenaja Mockup Billboard" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-black/80 backdrop-blur-md p-3 text-center border-t border-gray-800">
+                            <p class="text-xs font-bold text-white uppercase">Choose Experiences That Fit Your Lifestyle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Partnership Scheme & Payout -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-zenaja-dark border border-gray-800/80" data-title="Skema Kerjasama">
+            <div class="mb-4">
+                <span class="text-xs font-bold text-zenaja-lime uppercase tracking-widest">Financial & Operational Workflow</span>
+                <h2 class="text-2xl sm:text-4xl font-black uppercase text-white mt-1">Skema Kerjasama Transparan</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto">
+                <div class="bg-zenaja-black p-6 rounded-2xl border border-gray-800 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-gray-800 text-zenaja-lime flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-white">1. Transaksi Terpusat</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Seluruh pembayaran pengguna dilakukan secara sah dan tercatat aman melalui sistem Zenaja (E-Wallet, Transfer, QRIS, dll).
+                    </p>
+                </div>
+
+                <div class="bg-zenaja-black p-6 rounded-2xl border border-gray-800 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-gray-800 text-zenaja-lime flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-white">2. Pencairan Tiap Akhir Bulan</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Pendapatan total vendor dari hasil booking akan ditransfer langsung ke rekening vendor secara tepat waktu di tiap akhir bulan.
+                    </p>
+                </div>
+
+                <div class="bg-zenaja-black p-6 rounded-2xl border border-gray-800 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-gray-800 text-zenaja-lime flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-white">3. Tanpa Potongan Tersembunyi</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Pendapatan Anda sepenuhnya milik Anda. Kami fokus membantu memaksimalkan keterisian jadwal venue Anda tanpa potongan ekstra.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-zenaja-lime/10 border border-zenaja-lime/30 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-file-invoice-dollar text-zenaja-lime text-2xl"></i>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">Laporan Transaksi Real-Time</h4>
+                        <p class="text-xs text-gray-300">Rekapitulasi booking teratur sehingga memudahkan pencatatan keuangan venue Anda.</p>
+                    </div>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-black bg-zenaja-lime px-4 py-2 rounded-xl shrink-0">
+                    Sistem 100% Aman & Terpercaya
+                </span>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Call To Action (Sales Closing) -->
+        <section class="slide w-full flex-col justify-between p-6 md:p-10 rounded-3xl bg-gradient-to-b from-zenaja-dark to-black border border-gray-800 relative overflow-hidden" data-title="Gabung Sekarang">
+            <div class="absolute -top-32 -right-32 w-80 h-80 bg-zenaja-lime/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-zenaja-pink/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="text-center max-w-2xl mx-auto space-y-3 my-auto z-10">
+                <span class="px-3 py-1 rounded-full bg-zenaja-lime/20 text-zenaja-lime text-xs font-bold uppercase tracking-widest border border-zenaja-lime/30">
+                    Mari Tumbuh Bersama
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black uppercase text-white leading-tight">
+                    Gabung Sebagai <span class="text-zenaja-lime">Mitra Rekanan</span> Zenaja Sekarang!
+                </h2>
+                <p class="text-gray-300 text-sm md:text-base">
+                    Optimalkan slot lapangan Anda, raih insentif cashback bulanan, dan jangkau ribuan pehobi olahraga di sekitar venue Anda.
+                </p>
+
+                <!-- Contact & Action Card -->
+                <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+                    <a href="https://wa.me/?text=Halo%20Tim%20Zenaja,%20saya%20tertarik%20mendaftarkan%20venue%20olahraga%20kami." target="_blank" class="flex items-center justify-center gap-2 px-6 py-3.5 bg-zenaja-lime text-black font-extrabold rounded-2xl hover:bg-opacity-90 transition shadow-lg shadow-zenaja-lime/20 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Sales Kami
+                    </a>
+                    <div class="flex items-center justify-center gap-2 px-6 py-3.5 bg-zenaja-card text-white font-extrabold rounded-2xl border border-gray-700 text-sm">
+                        <i class="fa-solid fa-globe text-zenaja-lime"></i> ZENAJA.ID
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer App Availability -->
+            <div class="border-t border-gray-800/80 pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2">
+                <span>© 2026 Zenaja Indonesia. All rights reserved.</span>
+                <div class="flex items-center space-x-4">
+                    <span class="flex items-center gap-1.5"><i class="fa-brands fa-android text-zenaja-lime"></i> Android</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-brands fa-apple text-zenaja-lime"></i> iOS</span>
+                    <span class="text-gray-500">|</span>
+                    <span class="text-white font-bold">Flexible. Effortless. Designed for You.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Controller & Progress Bar -->
+    <footer class="bg-zenaja-black border-t border-gray-800/80 px-4 md:px-8 py-3 z-30 shrink-0">
+        <!-- Progress Bar -->
+        <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden mb-3">
+            <div id="progress-bar" class="bg-gradient-to-r from-zenaja-lime to-zenaja-pink h-full w-1/6 transition-all duration-300"></div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <div class="text-xs text-gray-400 hidden sm:block">
+                Gunakan panah keyboard <kbd class="px-1.5 py-0.5 bg-gray-800 rounded border border-gray-700 text-white">←</kbd> <kbd class="px-1.5 py-0.5 bg-gray-800 rounded border border-gray-700 text-white">→</kbd> untuk berpindah slide.
+            </div>
+
+            <!-- Previous / Next Controls -->
+            <div class="flex items-center space-x-3 mx-auto sm:mx-0">
+                <button onclick="prevSlide()" class="px-4 py-2 rounded-xl bg-zenaja-dark hover:bg-gray-800 border border-gray-800 text-white text-xs font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-chevron-left"></i> SEBELUMNYA
+                </button>
+                <button onclick="nextSlide()" class="px-5 py-2 rounded-xl bg-zenaja-lime hover:bg-opacity-90 text-black text-xs font-black transition flex items-center gap-2 shadow-lg shadow-zenaja-lime/10">
+                    SELANJUTNYA <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide Overview Modal -->
+    <div id="overview-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex-col p-6 overflow-y-auto">
+        <div class="flex items-center justify-between mb-6 max-w-6xl mx-auto w-full">
+            <h3 class="text-xl font-black text-white uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-border-all text-zenaja-lime"></i> Ringkasan Slide Presentation
+            </h3>
+            <button onclick="toggleOverview()" class="p-2 text-gray-400 hover:text-white text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div id="overview-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto w-full">
+            <!-- Dynamic overview cards inserted by JS -->
+        </div>
+    </div>
+
+    <!-- JavaScript Presentation Logic -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const currentSlideNum = document.getElementById('current-slide-num');
+        const totalSlidesNum = document.getElementById('total-slides-num');
+        const progressBar = document.getElementById('progress-bar');
+
+        // Initialize Total Slides Count
+        totalSlidesNum.textContent = totalSlides;
+
+        function updateSlideUI() {
+            // Update Active Slide
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Update Counter & Progress
+            currentSlideNum.textContent = currentSlide + 1;
+            const progressPercent = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlideUI();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlideUI();
+            const modal = document.getElementById('overview-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Overview Modal Grid Builder
+        function toggleOverview() {
+            const modal = document.getElementById('overview-modal');
+            const grid = document.getElementById('overview-grid');
+
+            if (modal.classList.contains('hidden')) {
+                // Populate Overview
+                grid.innerHTML = '';
+                slides.forEach((slide, idx) => {
+                    const title = slide.getAttribute('data-title') || `Slide ${idx + 1}`;
+                    const card = document.createElement('div');
+                    card.className = `p-4 rounded-2xl border ${idx === currentSlide ? 'border-zenaja-lime bg-zenaja-dark' : 'border-gray-800 bg-zenaja-black'} hover:border-zenaja-lime cursor-pointer transition flex flex-col justify-between h-32`;
+                    card.onclick = () => goToSlide(idx);
+                    card.innerHTML = `
+                        <span class="text-xs font-bold ${idx === currentSlide ? 'text-zenaja-lime' : 'text-gray-500'} uppercase">SLIDE ${idx + 1}</span>
+                        <h4 class="font-bold text-white text-base">${title}</h4>
+                        <span class="text-xs text-gray-400">Klik untuk lompat →</span>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Fullscreen Toggle
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Keyboard Navigation Event Listener
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                prevSlide();
+            } else if (e.key.toLowerCase() === 'f') {
+                toggleFullscreen();
+            } else if (e.key.toLowerCase() === 'o') {
+                toggleOverview();
+            }
+        });
+
+        // Initialize First View
+        updateSlideUI();
+    </script>
+</body>
+</html>
